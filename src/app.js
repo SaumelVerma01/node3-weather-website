@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast')
 const { title } = require('process')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Defining paths
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -103,6 +104,6 @@ app.get('*', (request,response) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('It works!,port number:3000')
+app.listen(port, () => {
+    console.log('It works!,port number:' + port)
 })
